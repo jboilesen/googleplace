@@ -85,6 +85,49 @@ class Place extends Request
     }
 
     /**
+     * Get the name of the place
+     * @return string
+     */
+    public function placeId()
+    {
+	if (isset($this->attributes['place_id'])){
+	        return $this->attributes['place_id'];
+	}else if (isset($this->attributes['placeid'])){
+		return $this->attributes['placeid'];
+	}
+	return '';
+    }
+
+
+    /**
+     * Get the name of the place
+     * @return string
+     */
+    public function name()
+    {
+        return $this->attributes['name'];
+    }
+
+
+    public function rating()
+    {
+	return $this->attributes['rating'];
+    }
+
+    /**
+     * Get the business status of the place
+     * @return string
+     */
+    public function businessStatus()
+    {
+	if (isset($this->attributes['business_status'])) {
+            return $this->attributes['business_status'];
+        }
+        return '';
+    }
+
+
+    /**
      * Get the lat lng of the place
      * @return array
      */
