@@ -1,11 +1,15 @@
 {
-    "name": "digitaldream/googleplace",
+    "name": "jboilesen/googleplace",
     "description": "Google Places API library",
     "license": "MIT",
     "authors": [
         {
             "name": "Tuhin",
             "email": "digitaldreams40@gmail.com"
+        },
+        {
+            "name": "Jonathan",
+            "email": "jonathan@boilesen.com"
         }
     ],
     "autoload": {
@@ -13,7 +17,7 @@
             "GooglePlace\\": "src/"
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev-master",
     "require": {
         "guzzlehttp/guzzle": "^6.3"
     },
