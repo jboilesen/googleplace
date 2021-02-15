@@ -25,9 +25,6 @@ class Nearby extends Request
     protected $validParams = [
         'location', 'radius', 'type', 'rankby', 'keyword', 'language', 'minprice', 'maxprice', 'name', 'opennow', 'pagetoken'
     ];
-    protected $default = [
-        'radius' => 40233,
-    ];
     /**
      * @var string
      */
@@ -45,7 +42,7 @@ class Nearby extends Request
      */
     public function __construct(array $params)
     {
-        if (!isset($params['radius']) && !isset($params['rankby'])) {
+        if (isset($params['rankby']) && $params['rankby'] != 'distance' && !isset($params['radius'])) {
             $params['radius'] = static::$defaultRadius;
         }
         parent::__construct($params);

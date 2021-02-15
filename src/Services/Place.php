@@ -108,7 +108,10 @@ class Place extends Request
         return $this->attributes['name'];
     }
 
-
+    /**
+     * Get the rating of the place
+     * @return string
+     */
     public function rating()
     {
 	return $this->attributes['rating'];
@@ -255,6 +258,10 @@ class Place extends Request
         return false;
     }
 
+
+    public function addressComponents(){
+	return $this->attributes['address_components'];
+    }
     /**
      * @param $type
      * @param bool $shortName
