@@ -318,7 +318,12 @@ class Place extends Request
      */
     public function reviews()
     {
-        $retArr = isset($this->attributes['reviews']) ? isset($this->attributes['reviews']) : [];
+        $retArr = [];
+        if (isset($this->attributes['reviews']) && is_array($this->attributes['reviews'])){
+            foreach ($this->attributes['reviews'] as $review) {
+                $retArr[] = $review;
+            }
+        }
         return new Collection($retArr);
     }
 
