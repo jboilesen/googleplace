@@ -293,7 +293,7 @@ class Place extends Request
     /**
      * @return Array
      */
-    public function openingHours()
+    public function openingHoursList()
     {
 	return isset($$this->attributes['opening_hours']) ? $this->attributes['opening_hours'] : null;
     }
