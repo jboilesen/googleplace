@@ -259,9 +259,13 @@ class Place extends Request
     }
 
 
+    /**
+     * @return mixed
+     */
     public function addressComponents(){
-	return $this->attributes['address_components'];
+	return isset($this->attributes['address_components']) ? $this->attributes['address_components'] : null;
     }
+
     /**
      * @param $type
      * @param bool $shortName
@@ -287,6 +291,14 @@ class Place extends Request
     }
 
     /**
+     * @return Array
+     */
+    public function openingHours()
+    {
+	return isset($$this->attributes['opening_hours']) ? $this->attributes['opening_hours'] : null;
+    }
+
+    /**
      * @return Collection
      */
     public function photos()
@@ -308,6 +320,23 @@ class Place extends Request
     {
         $retArr = isset($this->attributes['reviews']) ? isset($this->attributes['reviews']) : [];
         return new Collection($retArr);
+    }
+
+    /**
+     *
+     *
+     */
+    public function plusCode()
+    {
+        return isset($this->attributes['plus_code']) ? $this->attributes['plus_code'] : null;
+    }
+
+    /**
+     * @return mixed
+     *
+     */
+    public function types(){
+        return isset($this->attributes['types']) ? $this->attributes['types'] : null;
     }
 
     /**
